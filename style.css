@@ -240,9 +240,23 @@ body {
   flex-wrap: wrap;
 }
 
-/* Photo placeholder */
+/* Photo */
 .hero-photo {
   flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  border: 2px solid var(--clr-border);
+  display: block;
+}
+
+/* hide placeholder once real photo renders */
+.profile-photo ~ .photo-placeholder {
+  display: none;
 }
 
 .photo-placeholder {
@@ -404,7 +418,7 @@ body {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -546,6 +560,7 @@ body {
     gap: 40px;
   }
 
+  .profile-photo,
   .photo-placeholder {
     width: 160px;
     height: 160px;
@@ -601,6 +616,7 @@ body {
     order: -1;
   }
 
+  .profile-photo,
   .photo-placeholder {
     width: 120px;
     height: 120px;
